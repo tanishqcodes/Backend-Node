@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 
 module.exports = async (req, res) => {
-  const command = 'ifconfig';
+  const command = 'which ifconfig';
   const child = spawn(command, { shell: true });
   let output = '';
 
