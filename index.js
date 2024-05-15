@@ -2,10 +2,10 @@ const { spawn } = require('child_process');
 
 exports.handler = async (event, context) => {
   const command = 'dig google.com';
-  return new Promise((resolve, reject) => {
-    const child = spawn(command, { shell: true });
+  const child = spawn(command, { shell: true });
+  let output = '';
 
-    let output = '';
+  return new Promise((resolve, reject) => {
     child.stdout.on('data', (data) => {
       output += data.toString();
     });
